@@ -13,7 +13,7 @@ const AuthScreen = () => {
         router.push('/map')
     };
     const next = async () => {
-
+        router.push('/map')
     }
 
     return (
