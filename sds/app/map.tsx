@@ -1,29 +1,11 @@
 import React from 'react';
-import MapView, { Marker } from 'react-native-maps';
-import { View, StyleSheet } from 'react-native';
-
-const surfSpots = [
-    {
-        id: '1',
-        name: 'Thurso East',
-        lat: 58.5959,
-        lng: -3.5214,
-    },
-    {
-        id: '2',
-        name: 'Pease Bay',
-        lat: 55.8666,
-        lng: -2.3361,
-    },
-    {
-        id: '3',
-        name: 'Belhaven Bay',
-        lat: 56.0022,
-        lng: -2.5239,
-    },
-];
+import MapView, {Callout, Marker} from 'react-native-maps';
+import { View, Text,StyleSheet } from 'react-native';
+import { useSurfSpots } from '@/app/hooks/surfSpots';
+import {SpotForecast } from '@/app/components/spotForecast';
 
 const mapScreen = () => {
+    const {spots, loading} = useSurfSpots();
     return (
         <View style={styles.container}>
             <MapView
@@ -35,12 +17,16 @@ const mapScreen = () => {
                     longitudeDelta: 3.5,
                 }}
             >
-                {surfSpots.map((spot) => (
+                {spots.map((spot) => (
                     <Marker
                         key={spot.id}
                         coordinate={{ latitude: spot.lat, longitude: spot.lng }}
                         title={spot.name}
-                    />
+                    >
+                        <Callout>
+                            {/*<SpotForecast spot={spot}/>*/}
+                        </Callout>
+                    </Marker>
                 ))}
             </MapView>
         </View>
@@ -52,7 +38,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     map: {
-        flex: 1,
+        flex: 2,
     },
 });
 
