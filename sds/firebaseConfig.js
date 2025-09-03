@@ -11,12 +11,12 @@ import { getFirestore } from "firebase/firestore";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
-    authDomain: "surfscot-2b29c.firebaseapp.com",
+    authDomain: "surfscot-f21cc.firebaseapp.com",
     projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: "surfscot-2b29c.firebasestorage.app",
-    messagingSenderId: "452014169194",
+    storageBucket: "surfscot-f21cc.firebasestorage.app",
+    messagingSenderId: "748999751481",
     appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID,
-    measurementId: "G-DN0GX8E6S5"
+    measurementId: "G-RC8Z3PWSTG"
 };
 
 // Initialize Firebase
