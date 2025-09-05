@@ -46,8 +46,6 @@ export const SpotForecast = ({ spot }:SpotForecastProps)  => {
             <Text style={{ fontWeight: "bold" }}>{spot.name}</Text>
             <Text>Type: {spot.Type}</Text>
             <Text>Swell Height: {forecast.waveHeight?.noaa ?? "N/a"} m</Text>
-
-
         </View>
     );
 };
